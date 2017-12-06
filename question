@@ -1,0 +1,11 @@
+
+1 php直接用类名调用静态方法会不会触发类的构造函数,必须先new关键字才会触发构造函数
+  //静态类调用静态方法是不会触发构造函数,必须先new一下类
+	//值为null
+	public static $redisObj;
+	public function __construct()
+	{
+		self::$redisObj = CacheRedis::getNewInstance('127.0.0.1',22013,10);
+	}
+  self::$redisObj = null
+  
